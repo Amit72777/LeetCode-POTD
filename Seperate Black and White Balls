@@ -1,0 +1,20 @@
+class Solution {
+public:
+    long long minimumSteps(string s) {
+        int blackcount = 0;
+        long long swapcnt = 0;
+
+        for(auto i : s){
+            if( i == '0'){
+             // calculate  the number os swaps needed 
+                swapcnt += (long long ) blackcount ;
+            }
+            else {
+                // Move the next available position for white ball 
+                blackcount++;
+            }
+        }
+       
+        return swapcnt;
+    }
+};
